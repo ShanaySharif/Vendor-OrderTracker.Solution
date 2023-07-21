@@ -21,12 +21,13 @@ namespace VendorOrder.Tests
             string name = "Cafe";
             string description = "neighborhood cafe";
 
-            Order test = new Order( );
+            Order test = new Order(name, description);
 
             Assert.AreEqual(name, test.Name);
             Assert.AreEqual(description, test.Description);
         
         }
+        
         
     }
 }
