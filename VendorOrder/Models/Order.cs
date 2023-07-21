@@ -14,8 +14,9 @@ namespace VendorOrder.Models
         {
             Name = name;
             Description = description;
-            orders = new List<Order>();
             orders.Add(this);
+            
+            
 
 
         }
