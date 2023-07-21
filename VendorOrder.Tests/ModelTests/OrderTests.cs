@@ -18,10 +18,18 @@ namespace VendorOrder.Tests
         [TestMethod]
         public void OrderConstructor_CreatesInstanceOfOrder_Order()
         {
-            Order newOrder = new Order();
-            Assert.AreEqual(typeof(Order), newOrder.GetType());
+            string name = "Cafe";
+            string description = "neighborhood cafe";
+
+            Order test = new Order( );
+
+            Assert.AreEqual(name, test.Name);
+            Assert.AreEqual(description, test.Description);
+        
         }
+        
     }
 }
+
 
        
