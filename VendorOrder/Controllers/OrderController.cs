@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 namespace VendorOrder.Controllers
 {
-  public class VendorsController : Controller
+  public class OrderController : Controller
   {
 
   }
