@@ -40,6 +40,26 @@ namespace VendorOrder.Tests
         Assert.AreEqual(price, order.Price);
         Assert.AreEqual(1, order.Id);
     }
+
+     [TestMethod]
+        public void GetOrderDescription_ReturnsDescription_String()
+        {
+            //Arrange 
+            string description = "Test order description";
+            string date = "2023-07-22";
+            string title = "Test order title";
+            int price = 25;
+
+            Order order = new Order(description, date, title, price);
+
+            //ACT
+            string retrievedDescription = order.Description;
+            //Assert
+            Assert.AreEqual(description,retrievedDescription);
+        }
+
+
+
         [TestMethod]
         public void GetOrderTitle_ReturnsTitle_String()
         {
