@@ -19,9 +19,19 @@ namespace VendorOrder.Tests
       Vendor newVendor = new Vendor("New Vendor");
       Assert.AreEqual(typeof(Vendor), newVendor.GetType());
     }
+        [TestMethod]
+        public void
+        GetId_CreatesVendorId_VendorInt()
+        {
+            string name = "Vendor Name";
+            Vendor newVendor = new Vendor(name);
+
+            int result = newVendor.Id;
+            Assert.AreEqual(1, result);
+
     }
 
-    
+    }
 }
 
     
