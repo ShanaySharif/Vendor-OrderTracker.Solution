@@ -40,26 +40,24 @@ namespace VendorOrder.Tests
         Assert.AreEqual(price, order.Price);
         Assert.AreEqual(1, order.Id);
     }
-
-
         [TestMethod]
-        public void GetOrder_ReturnsTitle_Title()
+        public void TestGetOrderTitle_ReturnsTitle_String()
         {
-        //     //Arrange 
-        //     string description = "Test order description";
-        //     string date = "2023-07-22";
-        //     string title = "Test order title";
-        //     int price = 25;
+            //Arrange 
+            string description = "Test order description";
+            string date = "2023-07-22";
+            string title = "Test order title";
+            int price = 25;
 
-        //     Order order = new Order(description, date, title, price);
+            Order order = new Order(description, date, title, price);
 
-        //     //ACT
-        //     string retrievedTitle = order.Title;
-        //     //Assert
-        //     AssemblyLoadEventArgs.AreEqual(title,retrievedTitle);
+            //ACT
+            string retrievedTitle = order.Title;
+            //Assert
+            Assert.AreEqual(title,retrievedTitle);
 
     
-        // }
+        }
 
         //  [TestMethod]
         // public void GetTitle_ReturnsDate_Date()
@@ -107,7 +105,7 @@ namespace VendorOrder.Tests
         
         }
         
-    }
+    // }
 
 
 
