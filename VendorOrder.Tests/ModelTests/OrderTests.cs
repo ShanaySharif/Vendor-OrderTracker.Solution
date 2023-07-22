@@ -129,6 +129,22 @@ namespace VendorOrder.Tests
             CollectionAssert.AreEqual(newList, result);
 
         }
+         [TestMethod]
+        public void GetId_ItemsInstantiateWithAnIdAndGetterReturns_Int()
+        {
+            string title1 = "Title One";
+            string description1 = "Description One";
+            int price1 = 25;
+            string date1 = "2023-07-22";
+
+           Order newOrder = new Order(description1, date1, title1, price1);
+
+             int result = newOrder.Id;
+            //Assert
+            Assert.AreEqual(1, result);
+
+
+
    
         }
 
@@ -137,7 +153,7 @@ namespace VendorOrder.Tests
         
         }
         
-    // }
+    }
 
 
 
