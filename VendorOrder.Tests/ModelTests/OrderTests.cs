@@ -6,8 +6,8 @@ using System;
 namespace VendorOrder.Tests
 {
     [TestClass]
-    public class OrderTests: IDisposable
-    { 
+    public class OrderTests : IDisposable
+    {
 
         public void Dispose()
         {
@@ -15,27 +15,27 @@ namespace VendorOrder.Tests
         }
 
         [TestMethod]
-        public void 
+        public void
         OrderConstructor_CreatesInstanceOfOrder_Order()
         {
             // Arrange
-        string description = "Test order description";
-        string date = "2023-07-22";
-        string title = "Test order title";
-        int price = 25;
+            string description = "Test order description";
+            string date = "2023-07-22";
+            string title = "Test order title";
+            int price = 25;
 
-        // Act
-        Order order = new Order(description, date, title, price);
+            // Act
+            Order order = new Order(description, date, title, price);
 
-        // Assert
-        Assert.AreEqual(description, order.Description);
-        Assert.AreEqual(date, order.Date);
-        Assert.AreEqual(title, order.Title);
-        Assert.AreEqual(price, order.Price);
-        Assert.AreEqual(1, order.Id);
-    }
+            // Assert
+            Assert.AreEqual(description, order.Description);
+            Assert.AreEqual(date, order.Date);
+            Assert.AreEqual(title, order.Title);
+            Assert.AreEqual(price, order.Price);
+            Assert.AreEqual(1, order.Id);
+        }
 
-     [TestMethod]
+        [TestMethod]
         public void GetOrderDescription_ReturnsDescription_String()
         {
             //Arrange 
@@ -49,7 +49,7 @@ namespace VendorOrder.Tests
             //ACT
             string retrievedDescription = order.Description;
             //Assert
-            Assert.AreEqual(description,retrievedDescription);
+            Assert.AreEqual(description, retrievedDescription);
         }
         [TestMethod]
         public void GetOrderTitle_ReturnsTitle_String()
@@ -65,13 +65,13 @@ namespace VendorOrder.Tests
             //ACT
             string retrievedTitle = order.Title;
             //Assert
-            Assert.AreEqual(title,retrievedTitle);
+            Assert.AreEqual(title, retrievedTitle);
         }
 
-         [TestMethod]
+        [TestMethod]
         public void GetDate_ReturnsDate_Date()
         {
-             //Arrange 
+            //Arrange 
             string description = "Test order description";
             string date = "2023-07-22";
             string title = " Order title";
@@ -82,13 +82,13 @@ namespace VendorOrder.Tests
             //ACT
             string retrievedDate = order.Date;
             //Assert
-            Assert.AreEqual(date,retrievedDate);
+            Assert.AreEqual(date, retrievedDate);
 
         }
         [TestMethod]
         public void GetPrice_ReturnsPrice_Price()
         {
-             //Arrange 
+            //Arrange 
             string description = "Test order description";
             string date = "2023-07-22";
             string title = " Order title";
@@ -99,9 +99,9 @@ namespace VendorOrder.Tests
             //ACT
             int retrievedPrice = order.Price;
             //Assert
-            Assert.AreEqual(price,retrievedPrice);
+            Assert.AreEqual(price, retrievedPrice);
         }
-         [TestMethod]
+        [TestMethod]
         public void GetAll_ReturnsOrders_OrderList()
         {
             string title1 = "Title One";
@@ -121,7 +121,7 @@ namespace VendorOrder.Tests
             CollectionAssert.AreEqual(newList, result);
 
         }
-         [TestMethod]
+        [TestMethod]
         public void GetId_ItemsInstantiateWithAnIdAndGetterReturns_Int()
         {
             string title1 = "Title One";
@@ -129,14 +129,14 @@ namespace VendorOrder.Tests
             int price1 = 25;
             string date1 = "2023-07-22";
 
-           Order newOrder = new Order(description1, date1, title1, price1);
+            Order newOrder = new Order(description1, date1, title1, price1);
 
-             int result = newOrder.Id;
-           
+            int result = newOrder.Id;
+
             Assert.AreEqual(1, result);
         }
-         [TestMethod]
-         public void Find_ReturnsCorrectOrder_Order()
+        [TestMethod]
+        public void Find_ReturnsCorrectOrder_Order()
         {
             string title1 = "Title One";
             string description1 = "Description One";
@@ -148,21 +148,37 @@ namespace VendorOrder.Tests
             string date2 = "2023-07-22";
             Order newOrder1 = new Order(description1, date1, title1, price1);
             Order newOrder2 = new Order(description2, date2, title2, price2);
-           
 
-             Order result = Order.Find(2);
-           
+
+            Order result = Order.Find(2);
+
             Assert.AreEqual(newOrder2, result);
 
-        {
+            // {
+            //     [TestMethod]
+                // public void AddOrder_TargetsVendorOrder_Order()
+                // {
+                //     string title1 = "Title One";
+                //     string description1 = "Description One";
+                //     int price1 = 25;
+                //     string date1 = "2023-07-22";
+                //     string title2 = "Title Two";
+                //     string description2 = "Description Two";
+                //     int price2 = 50;
+                //     string date2 = "2023-07-22";
+                //     Order newOrder1 = new Order(description1, date1, title1, price1);
+                //     Vendor newOrder2 = new Order(description2, date2, title2, price2);
 
 
+                //     Order result = Order.Find(2);
+
+                //     Assert.AreEqual(newOrder2, result);
+
+                }
+            }
+
         }
-        }
-        
-        }
-        
-    }
+
 
 
 
