@@ -6,23 +6,30 @@ namespace VendorOrder.Models
     {
 
         public string Description { get; set; }
-        public int Id { get; }
-        private static List<Order> order = new List<Order> { };
+        public string Date { get; set; }
+        public int Price { get; set; }
+    public string Title { get; set; }
+public int Id { get; }
+private static List<Order> order = new List<Order> { };
 
-        public Order(string description)
-        {
-            Description = description;
-            order.Add(this);
-            Id = order.Count;
-        }
-         public static List<Order> GetAll()
-        {
-            return order;
-        }
-         public static void ClearAll()
-        {
-            order.Clear();
-        }
+public Order(string description, string date, string title, int price)
+{
+    Description = description;
+    Date = date;
+    Price = price;
+    Title = title;
+
+    order.Add(this);
+    Id = order.Count;
+}
+public static List<Order> GetAll()
+{
+    return order;
+}
+public static void ClearAll()
+{
+    order.Clear();
+}
 
 
 
