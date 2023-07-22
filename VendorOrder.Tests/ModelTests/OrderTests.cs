@@ -106,39 +106,30 @@ namespace VendorOrder.Tests
             int retrievedPrice = order.Price;
             //Assert
             Assert.AreEqual(price,retrievedPrice);
-
         }
 
-    
-        // [TestMethod]
-        // public void GetDescription_ReturnsDescription_String()
-        // {
-        //     string description = "description";
-        //     Order newOrder = new Order(description,"7/21/23", 25,"title" );
-        //     string result = newOrder.Description;
 
-        //     Assert.AreEqual(description, result);
-        // }
+         [TestMethod]
+        public void GetAll_ReturnsOrders_OrderList()
+        {
+            string title1 = "Title One";
+            string description1 = "Description One";
+            int price1 = 25;
+            string date1 = "2023-07-22";
+            string title2 = "Title Two";
+            string description2 = "Description Two";
+            int price2 = 50;
+            string date2 = "2023-07-22";
+            Order newOrder1 = new Order(description1, date1, title1, price1);
+            Order newOrder2 = new Order(description2, date2, title2, price2);
+            List<Order> newList = new List<Order> { newOrder1, newOrder2 };
 
-        
-        // [TestMethod]
-        // public void GetPrice_ReturnPrice_Price()
-        // {
-            
-        //     int price = 25;
-        //     Order newOrder = new Order("description", "7/21/2023", 25, "title");
+            List<Order> result = Order.GetAll();
 
-        //     int result = newOrder.Price;
-        //     Assert.AreEqual(price, result);
-        // }
-        
-        // [TestMethod]
-        // public void GetAll_ReturnsEmptyList_OrderList()
-        // {
-    
-        //     List<Order> newList = new List<Order> { };
-        //     List<Order> result = Order.GetAll();
-        //     CollectionAssert.AreEqual(newList, result);
+            CollectionAssert.AreEqual(newList, result);
+
+        }
+   
         }
 
 

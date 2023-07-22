@@ -12,6 +12,7 @@ namespace VendorOrder.Models
 public int Id { get; }
 private static List<Order> order = new List<Order> { };
 
+
 public Order(string description, string date, string title, int price)
 {
     Description = description;
