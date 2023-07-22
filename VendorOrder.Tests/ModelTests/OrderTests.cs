@@ -3,12 +3,6 @@ using System.Collections.Generic;
 using VendorOrder.Models;
 using System;
 
-//Properties for title: Donuts
-//Description: Jelly
-//Price: $25
-//Date: 7/21/23
-//int id = 0;
-
 namespace VendorOrder.Tests
 {
     [TestClass]
@@ -107,8 +101,6 @@ namespace VendorOrder.Tests
             //Assert
             Assert.AreEqual(price,retrievedPrice);
         }
-
-
          [TestMethod]
         public void GetAll_ReturnsOrders_OrderList()
         {
@@ -140,20 +132,38 @@ namespace VendorOrder.Tests
            Order newOrder = new Order(description1, date1, title1, price1);
 
              int result = newOrder.Id;
-            //Assert
+           
             Assert.AreEqual(1, result);
-
-
-
-   
         }
+         [TestMethod]
+         public void Find_ReturnsCorrectOrder_Order()
+        {
+            string title1 = "Title One";
+            string description1 = "Description One";
+            int price1 = 25;
+            string date1 = "2023-07-22";
+            string title2 = "Title Two";
+            string description2 = "Description Two";
+            int price2 = 50;
+            string date2 = "2023-07-22";
+            Order newOrder1 = new Order(description1, date1, title1, price1);
+            Order newOrder2 = new Order(description2, date2, title2, price2);
+           
+
+             Order result = Order.Find(2);
+           
+            Assert.AreEqual(newOrder2, result);
+
+        {
 
 
-
+        }
+        }
         
         }
         
     }
+
 
 
 

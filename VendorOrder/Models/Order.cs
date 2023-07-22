@@ -31,6 +31,10 @@ public static void ClearAll()
 {
     order.Clear();
 }
+public static Order Find(int searchId)
+{
+     return order[searchId - 1];
+}
 
 
 
