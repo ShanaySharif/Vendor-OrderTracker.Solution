@@ -17,8 +17,24 @@ namespace VendorOrder.Models
     Id = _vendor.Count;
     Orders = new List<Order>{};
 }
-
+  public static void ClearAll()
+  {
+    _vendor.Clear();
+  }
+  public static List<Vendor> GetAll()
+    {
+      return _vendor;
+    }
+     public static Vendor Find(int searchId)
+    {
+      return _vendor[searchId-1];
+    }
+    public void AddOrder(Order order)
+  {
+    Orders.Add(order);
+  }
   }
 }
+  
   
     
