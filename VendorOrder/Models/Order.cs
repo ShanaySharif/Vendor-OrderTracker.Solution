@@ -15,6 +15,14 @@ namespace VendorOrder.Models
             order.Add(this);
             Id = order.Count;
         }
+         public static List<Order> GetAll()
+        {
+            return order;
+        }
+         public static void ClearAll()
+        {
+            order.Clear();
+        }
 
 
 

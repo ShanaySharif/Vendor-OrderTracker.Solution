@@ -12,8 +12,13 @@ using System;
 namespace VendorOrder.Tests
 {
     [TestClass]
-    public class OrderTests
+    public class OrderTests: IDisposable
     { 
+
+        public void Dispose()
+        {
+            Order.ClearAll();
+        }
 
         [TestMethod]
         public void OrderConstructor_CreatesInstanceOfOrder_Order()
@@ -24,61 +29,43 @@ namespace VendorOrder.Tests
         [TestMethod]
         public void GetDescription_ReturnsDescription_String()
         {
-            //Arrange
             string description = "new cafe in the neighborhood.";
 
-            //Act
             Order newOrder = new Order(description);
             string result = newOrder.Description;
 
-            //Assert
             Assert.AreEqual(description, result);
         }
         [TestMethod]
         public void SetDescription_SetDescription_String()
         {
-            //Arrange
+            
             string description = "new cafe in the neighborhood.";
             Order newOrder = new Order(description);
 
-            //Act
             string updatedDescription = "Get a cup of coffee";
             newOrder.Description = updatedDescription;
             string result = newOrder.Description;
 
-            //Assert
             Assert.AreEqual(updatedDescription, result);
+        }
+        
+        [TestMethod]
+        public void GetAll_ReturnsEmptyList_OrderList()
+        {
+    
+            List<Order> newList = new List<Order> { };
+            List<Order> result = Order.GetAll();
+            CollectionAssert.AreEqual(newList, result);
         }
 
 
 
-
-
-
-    //         string name = "Cafe";
-    //         string description = "neighborhood cafe";
-
-    //         Order test = new Order(name, description);
-
-    //         Assert.AreEqual(name, test.Name);
-    //         Assert.AreEqual(description, test.Description);
-        
-    //     }
-    //    [TestMethod]
-    //     public void GetDescription_ReturnsDescription_string()
-    //     {
-    //         string name = "Cafe";
-    //         string description = "neighborhood cafe";
-
-    //         Order test = new Order(name, description);
-
-    //         Assert.AreEqual(name, test.Name);
-    //         Assert.AreEqual(description, test.Description);
         
         }
         
     }
-// }
+
 
 
        
