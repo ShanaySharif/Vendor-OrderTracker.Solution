@@ -57,9 +57,6 @@ namespace VendorOrder.Tests
             //Assert
             Assert.AreEqual(description,retrievedDescription);
         }
-
-
-
         [TestMethod]
         public void GetOrderTitle_ReturnsTitle_String()
         {
@@ -94,6 +91,25 @@ namespace VendorOrder.Tests
             Assert.AreEqual(date,retrievedDate);
 
         }
+        [TestMethod]
+        public void GetPrice_ReturnsPrice_Price()
+        {
+             //Arrange 
+            string description = "Test order description";
+            string date = "2023-07-22";
+            string title = " Order title";
+            int price = 25;
+
+            Order order = new Order(description, date, title, price);
+
+            //ACT
+            int retrievedPrice = order.Price;
+            //Assert
+            Assert.AreEqual(price,retrievedPrice);
+
+        }
+
+    
         // [TestMethod]
         // public void GetDescription_ReturnsDescription_String()
         // {
