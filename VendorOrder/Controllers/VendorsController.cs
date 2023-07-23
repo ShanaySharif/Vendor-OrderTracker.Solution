@@ -1,57 +1,57 @@
-using System.Collections.Generic;
-using System;
-using Microsoft.AspNetCore.Mvc;
-using VendorOrder.Models;
+// using System.Collections.Generic;
+// using System;
+// using Microsoft.AspNetCore.Mvc;
+// using VendorOrder.Models;
 
-namespace VendorOrder.Controllers
-{
-  public class VendorController : Controller
-  {
+// namespace VendorOrder.Controllers
+// {
+//   public class VendorController : Controller
+//   {
 
-    // [HttpGet("/categories")]
-    // public ActionResult Index()
-    // {
-    //   List<Category> allCategories = Category.GetAll();
-    //   return View(allCategories);
-    // }
+//     [HttpGet("/vendor")]
+//     public ActionResult Index()
+//     {
+//       List<Vendor> allVendor = Vendor.GetAll();
+//       return View(allVendor);
+//     }
 
-    // [HttpGet("/categories/new")]
-    // public ActionResult New()
-    // {
-    //   return View();
-    // }
+//     [HttpGet("/vendor/new")]
+//     public ActionResult New()
+//     {
+//       return View();
+//     }
 
-    // [HttpPost("/categories")]
-    // public ActionResult Create(string categoryName)
-    // {
-    //   Category newCategory = new Category(categoryName);
-    //   return RedirectToAction("Index");
-    // }
+//     [HttpPost("/vendor")]
+//     public ActionResult Create(string vendorName)
+//     {
+//       Vendor newVendor = new Vendor(vendorName);
+//       return RedirectToAction("Index");
+//     }
 
-    // [HttpGet("/categories/{id}")]
-    // public ActionResult Show(int id)
-    // {
-    //   Dictionary<string, object> model = new Dictionary<string, object>();
-    //   Category selectedCategory = Category.Find(id);
-    //   List<Item> categoryItems = selectedCategory.Items;
-    //   model.Add("category", selectedCategory);
-    //   model.Add("items", categoryItems);
-    //   return View(model);
-    // }
+//     [HttpGet("/vendor/{id}")]
+//     public ActionResult Show(int id)
+//     {
+//       Dictionary<string, object> model = new Dictionary<string, object>();
+//       Vendor selectedVendor = Vendor.Find(id);
+//       List<Order> vendorOrders = selectedVendor.Order;
+//       model.Add("vendor", selectedVendor);
+//       model.Add("orders", vendorOrders);
+//       return View(model);
+//     }
 
-    // // This one creates new Items within a given Category, not new Categories:
-    // [HttpPost("/categories/{categoryId}/items")]
-    // public ActionResult Create(int categoryId, string itemDescription)
-    // {
-    //   Dictionary<string, object> model = new Dictionary<string, object>();
-    //   Category foundCategory = Category.Find(categoryId);
-    //   Item newItem = new Item(itemDescription);
-    //   foundCategory.AddItem(newItem);
-    //   List<Item> categoryItems = foundCategory.Items;
-    //   model.Add("items", categoryItems);
-    //   model.Add("category", foundCategory);
-    //   return View("Show", model);
-    }
+//     // This one creates new Items within a given Category, not new Categories:
+//     [HttpPost("/vendors/{vendorId}/orders")]
+//     public ActionResult Create(int vendorId, string orderDescription)
+//     {
+//       Dictionary<string, object> model = new Dictionary<string, object>();
+//       Vendor foundVendor = Vendor.Find(vendorId);
+//       Order newOrder = new Order(orderDescription);
+//       finddOrder.AddOrder(newOrder);
+//       List<Order> vendorOrders = foundVendor.Orders;
+//       model.Add("orders", categoryOrders);
+//       model.Add("vendor", foundVendor);
+//       return View("Show", model);
+//     }
 
-  }
+//   }
 // }

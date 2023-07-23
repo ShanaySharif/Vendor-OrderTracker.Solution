@@ -153,34 +153,33 @@ namespace VendorOrder.Tests
             Order result = Order.Find(2);
 
             Assert.AreEqual(newOrder2, result);
-
-            // {
-            //     [TestMethod]
-                // public void AddOrder_TargetsVendorOrder_Order()
-                // {
-                //     string title1 = "Title One";
-                //     string description1 = "Description One";
-                //     int price1 = 25;
-                //     string date1 = "2023-07-22";
-                //     string title2 = "Title Two";
-                //     string description2 = "Description Two";
-                //     int price2 = 50;
-                //     string date2 = "2023-07-22";
-                //     Order newOrder1 = new Order(description1, date1, title1, price1);
-                //     Vendor newOrder2 = new Order(description2, date2, title2, price2);
-
-
-                //     Order result = Order.Find(2);
-
-                //     Assert.AreEqual(newOrder2, result);
-
-                }
-            }
-
         }
 
 
+            [TestMethod]
+            public void AddOrder_RelatesOrderWithVendor_OrderList()
+            {
+                string title1 = "Title One";
+                string description1 = "Description One";
+                int price1 = 25;
+                string date1 = "2023-07-22";
+                Order newOrder = new Order(description1, date1, title1, price1);
+                List<Order> newList = new List<Order> { newOrder };
+                string name = "Cafe";
+                Vendor newVendor = new Vendor(name);
+                newVendor.AddOrder(newOrder);
+
+                List<Order> result = newVendor.Orders;
+
+                CollectionAssert.AreEqual(newList, result);
+            }
+        }
+    }
 
 
 
-       
+
+
+
+
+
