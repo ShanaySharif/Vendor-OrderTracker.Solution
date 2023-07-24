@@ -15,8 +15,9 @@ The application allows bakery owners to keep track of their name, description  a
 
 ## Complete Setup
 - Navigate to main page of repo
-- ''' Clone or Fork project
+- Clone or Fork project
 - dotnet run --project VendorOrderTracker
+
 Or
 
 - cd into project main folder: VendorOrderTracker
@@ -27,7 +28,7 @@ If you are going to make changes and would like to see how those changes affect 
 Reminder: If you make changes to the Models, these changes require a restart of the server.
 
 Known Bugs
-None at this time.
+- None at this time.
 
 License
 MIT
