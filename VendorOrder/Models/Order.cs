@@ -36,8 +36,5 @@ namespace VendorOrder.Models
             return order[searchId - 1];
         }
 
-
-
-
     }
 }
