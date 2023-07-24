@@ -1,0 +1,18 @@
+body { 
+position:fixed;
+bottom:0px;
+left:0px;
+width:100%;
+color:#CCC;
+background:#ba0f0f;
+padding:8px;
+}
+
+.button {
+    border: 1px; color: aqua;
+    border-radius: 8px;
+    display: flex
+    /* align-items: center;
+    justify-content: center; */
+
+}
