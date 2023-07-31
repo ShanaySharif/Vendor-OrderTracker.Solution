@@ -3,19 +3,20 @@ using System.Collections.Generic;
 using VendorOrder.Models;
 using System;
 
- //properties of vendor name
-    //description of vendor 
-    //list of orders belonging to vendors 
-
 namespace VendorOrder.Tests
 {
-
-    public class VendorTests
+     [TestClass]
+    public class VendorTests : IDisposable
     {
+        public void Dispose()
+        {
+            Vendor.ClearAll();
+        }
         [TestMethod]
         public void
         VendorConstructor_CreatesInstanceOfVendor_Vendor()
         {
+            
       Vendor newVendor = new Vendor("New Vendor");
       Assert.AreEqual(typeof(Vendor), newVendor.GetType());
     }
@@ -41,6 +42,25 @@ namespace VendorOrder.Tests
             Vendor result = Vendor.Find(2);
 
             Assert.AreEqual(newVendor2, result);
+        }
+
+ [TestMethod]
+        public void GetAll_ReturnsAllVendors_VendorList()
+        {
+            // Arrange
+            Vendor vendor1 = new Vendor("Vendor 1");
+            Vendor vendor2 = new Vendor("Vendor 2");
+            Vendor vendor3 = new Vendor("Vendor 3");
+            
+            List<Vendor> allVendors = Vendor.GetAll();
+
+            Assert.AreEqual(3, allVendors.Count);
+            Assert.IsTrue(allVendors.Contains(vendor1));
+            Assert.IsTrue(allVendors.Contains(vendor2));
+            Assert.IsTrue(allVendors.Contains(vendor3));
+
+            
+            
         }
 
     }
